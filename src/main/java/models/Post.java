@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 
 public class Post {
-    private final String content;
+    private  String content;
     private static ArrayList<Post> instances = new ArrayList<>();
     private boolean published;
     private LocalDateTime createdAt;
@@ -41,5 +41,11 @@ public class Post {
     }
     public static Post findById(int id){
         return instances.get(id-1);
+    }
+    public void update(String content) {
+        this.content = content;
+    }
+    public void deletePost(){
+        instances.remove(id-1); //same reason
     }
 }
